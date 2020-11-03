@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { BarraSuperiorComponent } from './barra-superior/barra-superior.component';
 import { RegistroComponent } from './Componentes/registro/registro.component';
 import { ConsultaComponent } from './Componentes/consulta/consulta.component';
+import { YPipe } from './y.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ConsultaComponent } from './Componentes/consulta/consulta.component';
     BarraSuperiorComponent,
     RegistroComponent,
     ConsultaComponent,
+    YPipe,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

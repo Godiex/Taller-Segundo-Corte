@@ -3,7 +3,7 @@ import { Donacion } from '../Donacion/donacion';
 
 export class Persona {
     Identificacion : string;
-    Nombres : string;
+    nombres : string;
     Apellidos : string;
     Sexo : string;
     Edad : number;

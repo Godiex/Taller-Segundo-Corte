@@ -11,6 +11,7 @@ export class ConsultaComponent implements OnInit {
   constructor(private personaService : PersonaService) { }
   personas = [];
   total : number;
+  searchText : string;
   ngOnInit(): void {
     this.personaService.get().subscribe(result => {
       this.personas = result;

@@ -22,10 +22,14 @@ namespace Donaciones.Controllers
         }
          // GET: api/Persona
         [HttpGet]
-        public ActionResult<ConsultarPersonaResponse> Gets()
+        public ActionResult<IEnumerable<PersonaViewModel>> Gets()
         {
             var personasResponse = _servicioPersona.ConsultarTodos();
-            return personasResponse;
+            if(!personasResponse.Error)
+            {
+                return Ok(personasResponse.Personas.Select(p=> new PersonaViewModel(p)));
+            }
+            return BadRequest(personasResponse.Mensaje);
         }
         [HttpGet("{totalDonaciones}")]
         public ActionResult<decimal> ObtenerTotalDonaciones(string totalDonaciones)
